@@ -12,10 +12,10 @@ Config = {}
 Config.API_URL = 'https://cdecad.com/api'
 
 -- Your CDECAD API Key
-Config.API_KEY = 'fivem-cad-911-key-2024'
+Config.API_KEY = ''
 
 -- Your Community ID (Discord Guild ID)
-Config.COMMUNITY_ID = '1200664516858495056'
+Config.COMMUNITY_ID = '1234578900123456'
 
 -- =============================================================================
 -- PERSISTENCE CONFIGURATION
