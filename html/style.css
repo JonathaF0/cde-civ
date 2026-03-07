@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: transparent;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#id-card-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}
+
+#id-card {
+    width: 400px;
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 
+                0 0 0 2px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#id-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="50" fill="rgba(255,255,255,0.03)">★</text></svg>');
+    background-size: 30px 30px;
+    pointer-events: none;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.state-seal {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.state-seal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.state-name {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #ffd700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card-body {
+    display: flex;
+    gap: 15px;
+}
+
+.photo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.photo-placeholder {
+    width: 100px;
+    height: 120px;
+    background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e0 100%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-photo {
+    color: #4a5568;
+    font-size: 10px;
+    text-align: center;
+}
+
+.signature {
+    width: 100px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 14px;
+    color: #1a365d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.name-row .value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.address-row {
+    flex-wrap: wrap;
+}
+
+.address-row .value {
+    font-size: 11px;
+}
+
+.label {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 30px;
+}
+
+.value {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+}
+
+.card-footer {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barcode {
+    width: 150px;
+    height: 30px;
+    background: repeating-linear-gradient(
+        90deg,
+        #000 0px,
+        #000 2px,
+        transparent 2px,
+        transparent 4px,
+        #000 4px,
+        #000 5px,
+        transparent 5px,
+        transparent 8px,
+        #000 8px,
+        #000 10px,
+        transparent 10px,
+        transparent 11px
+    );
+    border-radius: 2px;
+}
+
+.shown-by {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: right;
+}
+
+/* Holographic effect */
+#id-card::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, 
+        rgba(255, 0, 0, 0.3),
+        rgba(255, 165, 0, 0.3),
+        rgba(255, 255, 0, 0.3),
+        rgba(0, 128, 0, 0.3),
+        rgba(0, 0, 255, 0.3),
+        rgba(75, 0, 130, 0.3),
+        rgba(238, 130, 238, 0.3)
+    );
+    border-radius: 50%;
+    animation: hologram 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes hologram {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Different card styles based on config */
+.card-style-blue {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+}
+
+.card-style-green {
+    background: linear-gradient(135deg, #1a4731 0%, #276749 50%, #1a4731 100%);
+}
+
+.card-style-red {
+    background: linear-gradient(135deg, #742a2a 0%, #c53030 50%, #742a2a 100%);
+}
+
+.card-style-purple {
+    background: linear-gradient(135deg, #44337a 0%, #6b46c1 50%, #44337a 100%);
+}
