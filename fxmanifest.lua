@@ -1,12 +1,10 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
 fx_version 'cerulean'
 game 'gta5'
 
 name 'cdecad-civmanager'
-description 'CDECAD Civilian Manager - Select civs, bank, register vehicles, show ID'
+description 'CDECAD Civilian Manager | Select civs, bank, register vehicles, show ID'
 author 'CDECAD'
-version '1.0.0'
+version '2.1.0'
 
 lua54 'yes'
 
