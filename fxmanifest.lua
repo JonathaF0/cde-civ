@@ -2,15 +2,16 @@ fx_version 'cerulean'
 game 'gta5'
 
 name 'cdecad-civmanager'
-description 'CDECAD Civilian Manager | Select civs, bank, register vehicles, show ID'
+description 'CDECAD Civilian Manager - Select civs, bank, register vehicles, show ID'
 author 'CDECAD'
-version '2.1.0'
+version '1.0.0'
 
 lua54 'yes'
 
 shared_scripts {
     '@ox_lib/init.lua',
-    'shared/config.lua'
+    'shared/config.lua',
+    'shared/vehicles.lua'
 }
 
 server_scripts {
